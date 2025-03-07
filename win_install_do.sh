@@ -34,7 +34,7 @@ echo CreateObject^("Shell.Application"^).ShellExecute "%~s0", "%*", "", "runas",
 "%temp%\Admin.vbs"
 del /f /q "%temp%\Admin.vbs"
 exit /b 2)
-net user Administrator PASSADMIN
+net user Administrator $PASSADMIN
 
 
 for /f "tokens=3*" %%i in ('netsh interface show interface ^|findstr /I /R "Local.* Ethernet Ins*"') do (set InterfaceName=%%j)
